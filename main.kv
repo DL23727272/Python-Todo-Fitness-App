@@ -1,0 +1,145 @@
+MDScreen:
+
+    MDBottomNavigation:
+        panel_color: "#65C6EA"
+        selected_color_background: "white"
+        text_color_active: "purple"
+
+        MDBottomNavigationItem:
+            name: 'screen 1'
+            text: 'Items'
+            icon: 'pencil'
+            Image:
+                source: "img/bg.jpg "
+                size_hint: None, None
+                width: "960dp"
+                height: "1440dp"
+                pos_hint: {'center_x': .5, 'center_y': .5}
+                opacity: 0.3
+            Image:
+                source: "img/logo.png"
+                size_hint: None, None
+                width: "120dp"
+                height: "120dp"
+                pos_hint: {'center_x': .5, 'center_y': .9}
+                
+            BoxLayout: 
+                orientation: 'vertical'
+                MDBoxLayout:
+                    padding:2
+                    spacing:10
+                    size_hint_y:0.4
+                   
+                    MDTextField:
+                        id:inputtodo
+                        hint_text:"What do you want to buy"
+                        required:True
+                        mode:"fill"
+                        size_hint_x: 0.6
+                    MDRaisedButton:
+                        text:"Add"
+                        md_bg_color:"purple"
+                        on_release:app.addnewtodo(inputtodo.text)
+
+                MDBoxLayout:
+                    size_hint_x:0.9
+                    MDScrollView:
+                        MDList:
+                            id:todo_list
+
+			MDFloatingActionButton:
+				icon: "logout"
+				md_bg_color: "purple"
+				pos_hint: {"center_x": .9, "center_y": .1}
+				on_release: app.logout_button()
+
+        MDBottomNavigationItem:
+            name: 'screen 2'
+            text: 'About'
+            icon: 'account-group-outline'
+            Image:
+                source: "img/bg.jpg "
+                size_hint: None, None
+                width: "960dp"
+                height: "1440dp"
+                pos_hint: {'center_x': .5, 'center_y': .5}
+                opacity: 0.3
+            MDLabel:
+                text: 'INFORMATION ABOUT DEVS'
+                halign: "center"
+                pos_hint: {"center_x": .5, "center_y": .7}
+                bold: True
+                
+            MDLabel:
+                text: 'Lorrie Mae Cadorna'
+                halign: 'center'
+                pos_hint: {"center_x": .5, "center_y": .6}
+            MDLabel:
+                text: 'Rowena Garais'
+                halign: 'center'
+                pos_hint: {"center_x": .5, "center_y": .5}
+
+        MDBottomNavigationItem:
+            name: 'screen 3'
+            text: 'System Info'
+            icon: 'cellphone-information'
+            Image:
+                source: "img/bg.jpg "
+                size_hint: None, None
+                width: "960dp"
+                height: "1440dp"
+                pos_hint: {'center_x': .5, 'center_y': .5}
+                opacity: 0.3
+            MDLabel:
+                text: 'System Info'
+                halign: 'center'
+                halign: "center"
+                pos_hint: {"center_x": .5, "center_y": .8}
+                bold: True
+            MDLabel:
+                text: "[b]Platform[/b]\n The task boddy app will be available on both Android and iOS platforms to cater to a wide range of users."
+                halign: 'center'
+                pos_hint: {"center_x": .5, "center_y": .64}
+                markup: True
+            MDLabel:
+                text: "[b]Compatibility[/b]\n The app will be compatible with devices running Android 6.0 (Marshmallow) and above, as well "
+                halign: 'center'
+                pos_hint: {"center_x": .5, "center_y": .5}
+                markup: True
+            MDLabel:
+                text: "[b]Storage[/b]\n The app will require minimal storage space, optimized for efficient performance on smartphones and tablets."
+                halign: 'center'
+                pos_hint: {"center_x": .5, "center_y": .35}
+                markup: True
+        MDBottomNavigationItem:
+            name: 'screen 4'
+            text: 'System Help'
+            icon: 'application-braces-outline'
+            Image:
+                source: "img/bg.jpg "
+                size_hint: None, None
+                width: "960dp"
+                height: "1440dp"
+                pos_hint: {'center_x': .5, 'center_y': .5}
+                opacity: 0.3
+            MDLabel:
+                text: 'System Help'
+                halign: 'center'
+                halign: "center"
+                pos_hint: {"center_x": .5, "center_y": .8}
+                bold: True
+            MDLabel:
+                text: "[b]User Interface[/b]\n The app will feature an intuitive and user-friendly interface, allowing users to easily navigate through tasks, create new ones, and manage their to-do lists efficiently."
+                halign: 'center'
+                pos_hint: {"center_x": .5, "center_y": .68}
+                markup: True
+            MDLabel:
+                text: "[b]Terms of Service and Privacy Policy[/b]\n Access to the app's terms of service and privacy policy for users to review and understand their rights and responsibilities. "
+                halign: 'center'
+                pos_hint: {"center_x": .5, "center_y": .5}
+                markup: True
+            MDLabel:
+                text: "[b]Offline Access[/b]\n Information on how to access tasks and use certain features of the app without an internet connection."
+                halign: 'center'
+                pos_hint: {"center_x": .5, "center_y": .35}
+                markup: True
